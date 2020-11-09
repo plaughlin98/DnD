@@ -1,0 +1,82 @@
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+.diceSelection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;
+    font-size: 24px;
+}
+
+.diceSelection > * {
+    border: 2px solid;
+}
+
+.diceSelection > *:hover {
+    color: rgb(91, 91, 155);
+    transition: 400ms;
+    cursor: pointer;
+    font-size: 3em;
+}
+
+.hidden {
+    visibility: hidden;;
+}
+
+.modifier {
+    display: flex;
+    justify-content: center;
+
+
+}
+.modifier > input {
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 3em;
+    border: 0;
+    outline: none;
+    border-bottom: Solid 2px;
+    background-color: rgb(255, 255, 255);
+    max-width: auto;
+
+
+}
+
+h1 {
+    font-size: 3em;
+}
+
+.frontAndCenter {
+    min-width: 500px;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+    padding: 15px;
+    transition: 400ms;
+    position: absolute;
+    border: 1px solid;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: rgb(56, 59, 88) 2px 2PX 2PX;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    color: rgb(64, 71, 133);
+}
+
+button {
+    
+}
+
+.diceSelection > button {
+    background:none;
+    border:none;
+    font-size:2em;
+    color:black;
+  }
