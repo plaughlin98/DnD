@@ -16,7 +16,7 @@ var handlers = {
     // Displays the Dice Inputs/Outputs
     displayDice: function(dice) {
         var title = document.querySelector('.title');
-        title.classList.add('hidden');
+        title.classList.add('small-title');
         var allDiceDivs = document.querySelector(".all-dice").getElementsByTagName("div");
         var allDiceDivsList = Array.prototype.slice.call(allDiceDivs);
         for (let i = 0; i < allDiceDivsList.length; i++) {
