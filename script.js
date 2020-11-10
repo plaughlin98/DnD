@@ -15,6 +15,8 @@ function getRandomInt(max) {
 var handlers = {
     // Displays the Dice Inputs/Outputs
     displayDice: function(dice) {
+        var title = document.querySelector('.title');
+        title.classList.add('hidden');
         var allDiceDivs = document.querySelector(".all-dice").getElementsByTagName("div");
         var allDiceDivsList = Array.prototype.slice.call(allDiceDivs);
         for (let i = 0; i < allDiceDivsList.length; i++) {
@@ -29,23 +31,24 @@ var handlers = {
     rollDice: function(dice) {
         return getRandomInt(dice) + 1;
     },
-    numOfRoll: function() {
-
-    },
-    displayRoll: function(diceDisplay, die) {
+    displayRoll: function(die) {
         let newDiv = this.createDiv();
         let modifier = parseInt(this.addModifier());
         let roll = parseInt(this.rollDice(die));
-
+        let sum = modifier + roll;
+        newDiv.innerHTML =`<span>Dice: <em>D${die}</em></span>`;
         if(this.addModifier() > 0) {
-            newDiv.innerText = `Modifier: +${modifier} Roll: ${roll} Total Sum: ${roll + modifier} `;
+            newDiv.innerHTML += `<span>Modifier: <strong>+${modifier}</strong> </span>\r\n`;
+            newDiv.innerHTML +=  `<span>Roll: <strong>${roll}</strong> </span>\r\n`;
+            newDiv.innerHTML += `<span>Total Sum: <strong>${sum}</strong> </span>`;
         } else if(this.addModifier() < 0){
-            newDiv.innerText = `Modifier: ${modifier} Roll: ${roll} Total Sum: ${roll + modifier} `;
+            newDiv.innerHTML += `<span>Modifier: <strong>${modifier}</strong> </span>\r\n`;
+            newDiv.innerHTML +=  `<span>Roll: <strong>${roll}</strong> </span>\r\n`;
+            newDiv.innerHTML += `<span>Total Sum: <strong>${sum}<strong></span>`;
         } else {
-            newDiv.innerText = `Total Roll: ${roll}`;
+            newDiv.innerHTML += `<span>Total Roll: <strong>${roll}</strong></span>`;
         }
     },
-
     // Get Modifier Value and Add to this.display function
     addModifier: function() {
         return modifier = document.getElementById('modifier').value;
@@ -54,11 +57,20 @@ var handlers = {
         var newDiv = document.createElement('div')
         newDiv.classList.add("dice-roll")
         return document.getElementById('dice-results').appendChild(newDiv)
+    },
+    clearAll: function() {
+        console.log('why no work')
+        var node = document.getElementById("dice-results");
+        node.innerHTML = '';
     }
 }
 
 // EVENT LISTENERS
 
+// Listen for Clear All
+
+// Listen for which dice to display up front
+// This should also remove the Main Title of the screen
 document.querySelector(".diceSelection").addEventListener('click', function(e){
     switch(e.target.id) {
         case "d4DiceSelector":
@@ -85,31 +97,79 @@ document.querySelector(".diceSelection").addEventListener('click', function(e){
     }
 })
 
+// Listen for Roll Button for each dice
+// Can this be refactored? Instead of labelling each dice, try to get them in a single multi-use function
 document.querySelector(".all-dice").addEventListener('click', function(e) {
     switch(e.target.id) {
         case "d4Dice":
-           handlers.displayRoll(".d4DiceSum", dice.d4Dice);
+            rollNum = parseInt(document.getElementById("d4Num").value)
+            if (isNaN(rollNum)) {
+                rollNum = 1;
+            }
+            for (let i = 0; i < rollNum; i++) {
+                handlers.displayRoll(dice.d4Dice);
+            }
            break;
         case "d6Dice":
-            handlers.displayRoll(".d6DiceSum", dice.d6Dice);
+            rollNum = parseInt(document.getElementById("d6Num").value)
+            if (isNaN(rollNum)) {
+                rollNum = 1;
+            }
+            for (let i = 0; i < rollNum; i++) {
+                handlers.displayRoll(dice.d6Dice);
+            }
             break;
         case "d8Dice":
-            handlers.displayRoll(".d8DiceSum", dice.d8Dice);
+            rollNum = parseInt(document.getElementById("d8Num").value)
+            if (isNaN(rollNum)) {
+                rollNum = 1;
+            }
+            for (let i = 0; i < rollNum; i++) {
+                handlers.displayRoll(dice.d8Dice);
+            }
             break;
         case "d10Dice":
-            handlers.displayRoll(".d10DiceSum", dice.d10Dice);
+            rollNum = parseInt(document.getElementById("d10Num").value)
+            if (isNaN(rollNum)) {
+                rollNum = 1;
+            }
+            for (let i = 0; i < rollNum; i++) {
+                handlers.displayRoll(dice.d10Dice);
+            }
             break;
         case "d12Dice":
-            handlers.displayRoll(".d12DiceSum", dice.d12Dice);
+            rollNum = parseInt(document.getElementById("d12Num").value)
+            if (isNaN(rollNum)) {
+                rollNum = 1;
+            }
+            for (let i = 0; i < rollNum; i++) {
+                handlers.displayRoll(dice.d12Dice);
+            }
             break;
         case "d20Dice":
-            handlers.displayRoll(".d20DiceSum", dice.d20Dice);
+            rollNum = parseInt(document.getElementById("d20Num").value)
+            if (isNaN(rollNum)) {
+                rollNum = 1;
+            }
+            for (let i = 0; i < rollNum; i++) {
+                handlers.displayRoll(dice.d20Dice);
+            }
             break;
         case "d100Dice":
-            handlers.displayRoll(".d100DiceSum", dice.d100Dice);
+            rollNum = parseInt(document.getElementById("d100Num").value)
+            if (isNaN(rollNum)) {
+                rollNum = 1;
+            }
+            for (let i = 0; i < rollNum; i++) {
+                handlers.displayRoll(dice.d100Dice);
+            }
             break;
         
     }
+})
+
+document.getElementById("clear-all-button").addEventListener('click', function(e) {
+    handlers.clearAll();
 })
 
 
