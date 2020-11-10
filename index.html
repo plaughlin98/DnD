@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="title">
+        <h1>
+            D&D Dice Roller
+        </h1>
+    </div>
     <div class="dice-rolling">
         <!-- Situation Type Necessary??
              <form>
@@ -33,45 +38,45 @@
             <button id="d20DiceSelector">D20</button>
         </div>
         <div class="modifier">
-            <input type="number" id="modifier" placeholder="Modifier"></input>
+            <input  type="number" id="modifier" placeholder="Modifier"></input>
         </div>
         <div class="clear-all">
-            <button class="button">Clear All Rolls</button>
+            <button id="clear-all-button" class="clearAllButton">Clear All Rolls</button>
         </div>
         <div class="all-dice">
             <div id="d4Display" class="hidden">
                 <h1>D4</h1>
-                <input type="number" min="1" placeholder="# of Rolls"></input>
+                <input id="d4Num" class="numOfRolls" ype="number" min="1" placeholder="# of Rolls"></input>
                 <button class="rollButton" id="d4Dice">Roll</button>
             </div>
-            <div id="d6Display" class="hidden button">
+            <div id="d6Display" class="hidden">
                 <h1>D6</h1>
-                <input type="number" min="1" placeholder="# of Rolls"></input>
+                <input id="d6Num" class="numOfRolls" type="number" min="1" placeholder="# of Rolls"></input>
                 <button id="d6Dice" class="rollButton">Roll</button>
             </div>
             <div id="d8Display" class="hidden">
                 <h1>D8</h1>
-                <input type="number" min="1" placeholder="# of Rolls"></input>
+                <input id="d8Num" class="numOfRolls" type="number" min="1" placeholder="# of Rolls"></input>
                 <button id="d8Dice" class="rollButton">Roll</button>
             </div>
             <div id="d10Display" class="hidden">
                 <h1>D10</h1>
-                <input type="number" min="1" placeholder="# of Rolls"></input>
+                <input id="d10Num" class="numOfRolls" type="number" min="1" placeholder="# of Rolls"></input>
                 <button id="d10Dice" class="rollButton">Roll</button>
             </div>
             <div id="d100Display" class="hidden">
                 <h1>D100</h1>
-                <input type="number" min="1" placeholder="# of Rolls"></input>
+                <input id="d100Num" class="numOfRolls" type="number" min="1" placeholder="# of Rolls"></input>
                 <button id="d100Dice" class="rollButton">Roll</button>
             </div>
             <div id="d12Display" class="hidden">
                 <h1>D12</h1>
-                <input type="number" min="1" placeholder="# of Rolls"></input>
+                <input id="d12Num"class="numOfRolls" type="number" min="1" placeholder="# of Rolls"></input>
                 <button id="d12Dice" class="rollButton">Roll</button>
             </div>
             <div id="d20Display" class="hidden">
                 <h1>D20</h1>
-                <input type="number" min="1" placeholder="# of Rolls"></input>
+                <input id="d20Num" class="numOfRolls" type="number" min="1" placeholder="# of Rolls"></input>
                 <button id="d20Dice" class="rollButton">Roll</button>
             </div> 
         </div>   
