@@ -35,57 +35,49 @@
         <div class="modifier">
             <input type="number" id="modifier" placeholder="Modifier"></input>
         </div>
+        <div class="clear-all">
+            <button class="button">Clear All Rolls</button>
+        </div>
         <div class="all-dice">
             <div id="d4Display" class="hidden">
                 <h1>D4</h1>
                 <input type="number" min="1" placeholder="# of Rolls"></input>
-                <button id="d4Dice">Roll</button>
-                
-                <h3 class="d4DiceSum">Total Roll Sum</h3>
+                <button class="rollButton" id="d4Dice">Roll</button>
             </div>
-            <div id="d6Display" class="hidden">
+            <div id="d6Display" class="hidden button">
                 <h1>D6</h1>
                 <input type="number" min="1" placeholder="# of Rolls"></input>
-                <button id="d6Dice">Roll</button>
-                
-                <h3 class="d6DiceSum">Total Roll Sum</h3>
+                <button id="d6Dice" class="rollButton">Roll</button>
             </div>
             <div id="d8Display" class="hidden">
                 <h1>D8</h1>
                 <input type="number" min="1" placeholder="# of Rolls"></input>
-                <button id="d8Dice">Roll</button>
-                
-                <h3 class="d8DiceSum">Total Roll Sum</h3>
+                <button id="d8Dice" class="rollButton">Roll</button>
             </div>
             <div id="d10Display" class="hidden">
                 <h1>D10</h1>
                 <input type="number" min="1" placeholder="# of Rolls"></input>
-                <button id="d10Dice">Roll</button>
-                
-                <h3 class="d10DiceSum">Total Roll Sum</h3>
+                <button id="d10Dice" class="rollButton">Roll</button>
             </div>
             <div id="d100Display" class="hidden">
                 <h1>D100</h1>
                 <input type="number" min="1" placeholder="# of Rolls"></input>
-                <button id="d100Dice">Roll</button>
-                
-                <h3 class="d100DiceSum">Total Roll Sum</h3>
+                <button id="d100Dice" class="rollButton">Roll</button>
             </div>
             <div id="d12Display" class="hidden">
                 <h1>D12</h1>
                 <input type="number" min="1" placeholder="# of Rolls"></input>
-                <button id="d12Dice">Roll</button>
-                
-                <h3 class="d12DiceSum">Total Roll Sum</h3>
+                <button id="d12Dice" class="rollButton">Roll</button>
             </div>
             <div id="d20Display" class="hidden">
                 <h1>D20</h1>
                 <input type="number" min="1" placeholder="# of Rolls"></input>
-                <button id="d20Dice">Roll</button>
-                
-                <h3 class="d20DiceSum">Total Roll Sum</h3>
-            </div>    
-        </div>
+                <button id="d20Dice" class="rollButton">Roll</button>
+            </div> 
+        </div>   
+    </div>
+    <div class="diceRolls" id="dice-results">
+
     </div> 
     <script src="script.js"></script>
 </body>

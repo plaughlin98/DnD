@@ -33,16 +33,16 @@ var handlers = {
 
     },
     displayRoll: function(diceDisplay, die) {
+        let newDiv = this.createDiv();
         let modifier = parseInt(this.addModifier());
         let roll = parseInt(this.rollDice(die));
-        let rollSumDisplay = document.querySelector(diceDisplay);
 
         if(this.addModifier() > 0) {
-            rollSumDisplay.innerText = `Modifier: +${modifier} Roll: ${roll} Total Sum: ${roll + modifier} `;
+            newDiv.innerText = `Modifier: +${modifier} Roll: ${roll} Total Sum: ${roll + modifier} `;
         } else if(this.addModifier() < 0){
-            rollSumDisplay.innerText = `Modifier: ${modifier} Roll: ${roll} Total Sum: ${roll + modifier} `;
+            newDiv.innerText = `Modifier: ${modifier} Roll: ${roll} Total Sum: ${roll + modifier} `;
         } else {
-            rollSumDisplay.innerText = `Total Roll: ${roll}`;
+            newDiv.innerText = `Total Roll: ${roll}`;
         }
     },
 
@@ -50,11 +50,14 @@ var handlers = {
     addModifier: function() {
         return modifier = document.getElementById('modifier').value;
     },
+    createDiv: function() {
+        var newDiv = document.createElement('div')
+        newDiv.classList.add("dice-roll")
+        return document.getElementById('dice-results').appendChild(newDiv)
+    }
 }
 
-function rollDice(dice) {
-    
-}
+// EVENT LISTENERS
 
 document.querySelector(".diceSelection").addEventListener('click', function(e){
     switch(e.target.id) {
